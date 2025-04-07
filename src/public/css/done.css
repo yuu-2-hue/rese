@@ -1,0 +1,56 @@
+.done__container {
+    max-width: 600px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(119, 119, 119, 1);
+    margin: 0 auto;
+}
+
+.done__wrapper {
+    padding-block: 100px;
+}
+
+.message {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.form{
+    text-align: center;
+}
+.btn {
+    width: 60px;
+    font-size: 1rem;
+    color: white;
+    background-color: blue;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .done__container {
+        max-width: 470px;
+    }
+
+    .message {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .done__container {
+        max-width: 360px;
+    }
+
+    .message {
+        font-size: 1.3rem;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+    }
+}

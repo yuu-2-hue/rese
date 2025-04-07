@@ -1,0 +1,56 @@
+.admin__container{
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.page__ttl{
+    font-size: 2rem;
+}
+
+.button__wrapper{
+    text-align: right;
+}
+.store__button{
+    font-size: 1.3rem;
+    color: white;
+    text-decoration: none;
+    background-color: blue;
+    border-radius: 7px;
+    padding: 5px 20px;
+}
+
+.table{
+    width: 100%;
+    table-layout: fixed;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 30px auto;
+}
+.table__row{
+    border: 2px solid #b1b1b1;
+    padding: 20px;
+}
+.table__row th, .table__row td {
+    padding: 10px;
+}
+.table__row th{
+    background-color: cornflowerblue;
+}
+
+@media screen and (max-width: 768px) {
+    .admin__container {
+        max-width: 470px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .admin__container {
+        max-width: 370px;
+    }
+
+    .table {
+        font-size: 0.8rem;
+    }
+}
+

@@ -1,0 +1,193 @@
+.representative__container{
+    max-width: 850px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+.representative-name{
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 0 30 0;
+}
+
+.button__wrapper {
+    text-align: right;
+    margin: 30px 0;
+}
+.store__button {
+    font-size: 1.3rem;
+    color: white;
+    text-decoration: none;
+    background-color: blue;
+    border-radius: 7px;
+    padding: 5px 20px;
+}
+
+.representative__wrapper{
+    background-color: cornflowerblue;
+    border-radius: 7px;
+}
+.nav{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3560f6;
+    border-radius: 7px;
+    padding: 0px 30px;
+    margin-top: 10px;
+}
+.shop-name{
+    font-size: 1.25rem;
+    color: white;
+}
+.detail__btn, .mail__btn, .reservation__btn {
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0 10px;
+}
+.detail__btn::after, .mail__btn::after, .reservation__btn::after {
+    content: '▼';
+    display: inline-block;
+    transform: rotate(90deg);
+    transition: .4s;
+}
+.detail__btn.active::after, .mail__btn.active::after, .reservation__btn.active::after {
+    transform: rotate(0deg);
+}
+
+.update__form, .mail__form, .reservation__wrapper {
+    max-width: 600px;
+    text-align: center;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.update__form.active, .mail__form.active, .reservation__wrapper.active {
+    height: 400px;
+    text-align: center;
+    opacity: 1;
+    visibility: visible;
+}
+.reservation__wrapper.active{
+    overflow-y: scroll;
+}
+
+.table{
+    text-align: center;
+    table-layout: fixed;
+    width: 100%;
+}
+.table__row {
+    border-bottom: 2px solid white;
+}
+.table__row th, .table__row td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.name, .area, .genre, .overview, .subject, .main-text{
+    width: 400px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    padding: 9px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.file__label {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+input[type="file"] {
+    display: none;
+}
+
+.subject{
+    margin-top: 20px;
+}
+.overview{
+    height: 100px;
+}
+.main-text{
+    height: 200px;
+}
+.update__form--button{
+    text-align: center;
+    margin-top: 10px;
+}
+.update__form--button button{
+    color: white;
+    font-size: 1.2rem;
+    background-color: blue;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.form__error{
+    color: red;
+}
+
+@media screen and (max-width: 1200px) {
+    .representative__container {
+        max-width: 750px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .representative__container {
+        max-width: 480px;
+    }
+
+    .update__form,
+    .mail__form,
+    .reservation__wrapper {
+        max-width: 450px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .representative__container {
+        max-width: 360px;
+    }
+
+    .nav {
+        padding: 0px 15px;
+    }
+
+    .shop-name{
+        font-size: 1rem;
+    }
+
+    .update__form,
+    .mail__form,
+    .reservation__wrapper {
+        max-width: 350px;
+    }
+
+    .name,
+    .area,
+    .genre,
+    .overview,
+    .subject,
+    .main-text {
+        width: 300px;
+    }
+}
+

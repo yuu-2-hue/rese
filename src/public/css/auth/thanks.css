@@ -1,0 +1,51 @@
+.thanks__container {
+    max-width: 600px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(119, 119, 119, 1);
+    margin: 0 auto;
+}
+
+.thanks__wrapper{
+    padding-block: 100px;
+}
+
+.message {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.btn{
+    display: block;
+    width: 130px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: blue;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .thanks__container {
+        max-width: 470px;
+    }
+    .message {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .thanks__container {
+        max-width: 360px;
+    }
+    .message {
+        font-size: 1.3rem;
+    }
+    .btn {
+        width: 100px;
+        font-size: 0.8rem;
+    }
+}

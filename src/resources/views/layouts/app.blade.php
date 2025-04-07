@@ -13,33 +13,18 @@
 
 <body>
     <header class="header__container">
-        <div class="header__inner">
-            <div class="header__item">
-                <a class="header__logo" href="/attendance">
-                    <img src="{{ asset('img/logo.svg') }}" alt="logo画像">
-                </a>
-                <ul class="header-nav">
-                    <li class="header-nav__item">
-                        <a class="header-nav__link" href="/attendance">勤怠</a>
-                    </li>
-                    <li class="header-nav__item">
-                        <a class="header-nav__link" href="/attendance/list">勤怠一覧</a>
-                    </li>
-                    <li class="header-nav__item">
-                        <a class="header-nav__link" href="/stamp_correction_request/list">申請</a>
-                    </li>
-                    <li class="header-nav__item">
-                        @if (Auth::check())
-                        <form action="/logout" method="post">
-                            @csrf
-                            <button class="header-nav__button">ログアウト</button>
-                        </form>
-                        @elseif(!Auth::check())
-                        <a class="header-nav__link" href="/login">ログイン</a>
-                        @endif
-                    </li>
-                </ul>
+        <div class="header__item">
+            <div class="ttl__wrapper">
+                <form action="/menu" method="get">
+                    <button class="menu-btn">
+                        <span class="top-line"></span>
+                        <span class="center-line"></span>
+                        <span class="under-line"></span>
+                    </button>
+                </form>
+                <a class="logo" href="/">Rese</a>
             </div>
+            @yield('header')
         </div>
     </header>
 

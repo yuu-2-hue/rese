@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+use App\Models\Shop;
+
+class Favorite extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'shop_id',
+    ];
+
+    public function scopeGetFavoriteShop($query, $userId)
+    {
+        return $this->where('user_id', $userId)->get();
+    }
+}

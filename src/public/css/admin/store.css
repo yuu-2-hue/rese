@@ -1,0 +1,48 @@
+.store__container{
+    max-width: 850px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.page__ttl{
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.form__item{
+    margin: 30px;
+}
+
+.form__item input{
+    width: 70%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    padding: 5px 10px;
+}
+
+.form__button{
+    margin-top: 50px;
+}
+.form__button button{
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    color: white;
+    background-color: blue;
+    border-radius: 7px;
+    padding: 5px 20px;
+}
+
+.form__error{
+    color: red;
+    text-align: left;
+    padding-inline: 120px;
+}
+
+@media screen and (max-width: 768px) {
+    .form__item input {
+        width: 100%;
+    }
+}

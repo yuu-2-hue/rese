@@ -1,0 +1,86 @@
+.store__container {
+    max-width: 850px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.page__ttl {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.form__item {
+    margin: 30px;
+}
+
+.name, .area, .genre, .overview {
+    width: 70%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    padding: 5px 10px;
+}
+.overview{
+    height: 100px;
+    padding: 10px 10px;
+}
+.file__label {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+input[type="file"] {
+    display: none;
+}
+
+.form__button {
+    margin-top: 40px;
+}
+
+.form__button button {
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    color: white;
+    background-color: blue;
+    border-radius: 7px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.file-form__error{
+    color: red;
+}
+.form__error{
+    color: red;
+    text-align: left;
+    padding-left: 120px;
+}
+
+@media screen and (max-width: 1200px) {
+    
+}
+
+@media screen and (max-width: 768px) {
+    .form__item span{
+        display: block;
+    }
+
+    .name,
+    .area,
+    .genre,
+    .overview {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    
+}

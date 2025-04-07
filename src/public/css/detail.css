@@ -1,0 +1,304 @@
+.detail__container{
+    max-width: 1300px;
+    margin: 0px auto;
+    margin-bottom: 30px;
+}
+.top__wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.left__wrapper{
+    max-width: 600px;
+}
+.left-content__header{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 20px 0;
+}
+.back__button{
+    width: 30px;
+    height: 30px;
+    vertical-align: 9px;
+    font-weight: bold;
+    background-color: white;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    box-shadow: 3px 3px 5px rgba(119, 119, 119, 1);
+    padding: 0;
+}
+.shop__name{
+    margin: 0 15px;
+}
+.shop__img{
+    display: block;
+    width: 600px;
+}
+.tag__wrapper{
+    margin: 20px 0px 20px;
+}
+
+.right__wrapper{
+    max-width: 600px;
+}
+.right-content{
+    padding-inline: 30px;
+    padding-bottom: 30px;
+}
+.right-content__ttl{
+    color: white;
+    padding: 30px 30px;
+    margin: 0;
+}
+.form{
+    background-color: #3560f6;
+    border-radius: 7px;
+}
+.date, .time, .number{
+    display: block;
+    width: 200px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    padding: 9px;
+    margin-bottom: 10px;
+}
+.time, .number{
+    width: 540px;
+}
+.reservation__list{
+    width: 560px;
+    height: 300px;
+    overflow-y: scroll;
+}
+.table{
+    width: 540px;
+    color: white;
+    background-color: cornflowerblue;
+    border-radius: 7px;
+    margin: 20px 0;
+}
+.table__header, .table__data{
+    padding: 5px 20px 0px;
+}
+.table__header{
+    width: 120px;
+}
+.top{
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+.under{
+    padding-bottom: 20px;
+}
+.reservation__button{
+    display: block;
+    width: 600px;
+    font-size: 1rem;
+    color: white;
+    background-color: blue;
+    border: none;
+    outline: none;
+    border-radius: 0px 0px 7px 7px;
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+.under__wrapper{
+    margin-bottom: 100px;
+}
+.under-content__ttl{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.review__wrapper{
+    border-bottom: 1px solid black;
+    padding: 10px 50px;
+}
+.name, .evaluation, .comment{
+    font-size: 1.25rem;
+}
+.evaluation::after{
+    content: '★';
+    color: #F8C601;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+.review-form__item{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+.review-form__item input[type='radio']{
+    display: none;
+}
+.review-form__item label {
+    color: #D2D2D2;
+    font-size: 50px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+.review-form__item label:hover,
+.review-form__item label:hover~label,
+.review-form__item input[type='radio']:checked~label {
+    color: #F8C601;
+}
+.form__comment{
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+}
+.review__button{
+    font-size: 1rem;
+    color: white;
+    background-color: blue;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    padding: 5px 20px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.form__error{
+    color: red;
+}
+.review-form__error{
+    color: red;
+    padding-inline: 130px;
+}
+
+@media screen and (max-width: 1400px) {
+    .detail__container {
+        max-width: 1000px;
+    }
+    .left__wrapper {
+        max-width: 450px;
+    }
+    .shop__img {
+        width: 450px;
+    }
+    .right__wrapper {
+        max-width: 450px;
+    }
+    .time,
+    .number {
+        width: 390px;
+    }
+    .reservation__list {
+        width: 390px;
+    }
+    .table {
+        width: 390px;
+    }
+    .reservation__button {
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .detail__container {
+        max-width: 700px;
+    }
+    .left__wrapper {
+        max-width: 330px;
+    }
+    .shop__img {
+        width: 330px;
+    }
+    .right__wrapper {
+        max-width: 330px;
+    }
+    .time,
+    .number {
+        width: 270px;
+    }
+    .reservation__list {
+        width: 270px;
+    }
+    .table {
+        width: 270px;
+    }
+    .reservation__button {
+        width: 330px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .detail__container {
+        max-width: 460px;
+    }
+    .top__wrapper {
+        display: block;
+    }
+
+    .left__wrapper {
+        max-width: 460px;
+    }
+
+    .shop__img {
+        width: 460px;
+    }
+
+    .right__wrapper {
+        max-width: 460px;
+    }
+
+    .time,
+    .number {
+        width: 400px;
+    }
+
+    .reservation__list {
+        width: 400px;
+    }
+
+    .table {
+        width: 400px;
+    }
+
+    .reservation__button {
+        width: 460px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .detail__container {
+        max-width: 360px;
+    }
+
+    .left__wrapper {
+        max-width: 360px;
+    }
+
+    .shop__img {
+        width: 360px;
+    }
+
+    .right__wrapper {
+        max-width: 360px;
+    }
+
+    .time,
+    .number {
+        width: 300px;
+    }
+
+    .reservation__list {
+        width: 300px;
+    }
+
+    .table {
+        width: 300px;
+    }
+
+    .reservation__button {
+        width: 360px;
+    }
+}
