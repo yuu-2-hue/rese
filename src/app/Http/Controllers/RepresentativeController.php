@@ -18,22 +18,19 @@ use App\Models\Reservation;
 
 class RepresentativeController extends Controller
 {
+    // 代表者画面
     public function representative()
     {
+        $name = User::Find(Auth::id())->name;
         $shops = Shop::All();
         $areas = Area::All();
         $genres = Genre::All();
         $reservations = Reservation::All();
 
-        $users = User::where('name', '山本')->get();
-        foreach($users as $user)
-        {
-            $name = $user->name;
-        }
-
         return view('representative.index', compact('name', 'shops', 'areas', 'genres', 'reservations'));
     }
 
+    // 店舗作成画面
     public function store()
     {
         $areas = Area::All();
@@ -42,6 +39,7 @@ class RepresentativeController extends Controller
         return view('representative.store', compact('areas', 'genres'));
     }
 
+    // 店舗作成機能
     public function create(RepresentativeRequest $request)
     {
         $file_name = $request->file('image')->getClientOriginalName();
@@ -60,6 +58,7 @@ class RepresentativeController extends Controller
         return redirect()->route('representative');
     }
 
+    // 店舗情報更新機能
     public function update(RepresentativeRequest $request)
     {
         $file_name = $request->file('image')->getClientOriginalName();
@@ -78,17 +77,20 @@ class RepresentativeController extends Controller
         return redirect()->route('representative');
     }
 
+    // メール送信機能
     public function send(Request $request)
     {
-        $users = User::All();
-        $shop = Shop::Find($request->id);
+        $users = User::all();
+        $shop = Shop::find($request->id);
 
         $subject = $request->subject;
         $sender = $shop->email;
         $mainText = $request->text;
 
         foreach ($users as $user) {
-            Mail::send(new NoticeMail($subject, $sender, $user->email, $mainText));
+            Mail::to($user->email)->send(
+                new NoticeMail($subject, $sender, $mainText)
+            );
         }
 
         return redirect()->route('representative');

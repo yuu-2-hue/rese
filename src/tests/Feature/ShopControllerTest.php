@@ -2,8 +2,6 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
@@ -37,9 +35,20 @@ class ShopControllerTest extends TestCase
         $response = $this->get('/');
 
         $response->assertStatus(200);
-        $response->assertViewHas('shops', $shops);
-        $response->assertViewHas('areas', $areas);
-        $response->assertViewHas('genres', $genres);
+        $this->assertEquals(
+            $shops->map->getAttributes()->all(),
+            $response->viewData('shops')->map->getAttributes()->all()
+        );
+
+        $this->assertEquals(
+            $areas->map->getAttributes()->all(),
+            $response->viewData('areas')->map->getAttributes()->all()
+        );
+
+        $this->assertEquals(
+            $genres->map->getAttributes()->all(),
+            $response->viewData('genres')->map->getAttributes()->all()
+        );
     }
 
     // 店名検索
@@ -51,7 +60,7 @@ class ShopControllerTest extends TestCase
             'genre_id' => 1,
             'name' => '仙人',
             'overview' => '料理長厳選の食材から作る寿司を用いたコースをぜひお楽しみください。食材・味・価格、お客様の満足度を徹底的に追及したお店です。特別な日のお食事、ビジネス接待まで気軽に使用することができます。',
-            'image' => 'img/sushi.jpg',
+            'image' => 'image/sushi.jpg',
         ];
 
         $response->assertStatus(200);
@@ -73,7 +82,7 @@ class ShopControllerTest extends TestCase
             'genre_id' => 1,
             'name' => '仙人',
             'overview' => '料理長厳選の食材から作る寿司を用いたコースをぜひお楽しみください。食材・味・価格、お客様の満足度を徹底的に追及したお店です。特別な日のお食事、ビジネス接待まで気軽に使用することができます。',
-            'image' => 'img/sushi.jpg',
+            'image' => 'image/sushi.jpg',
         ];
 
         $response->assertStatus(200);
@@ -95,7 +104,7 @@ class ShopControllerTest extends TestCase
             'genre_id' => 1,
             'name' => '仙人',
             'overview' => '料理長厳選の食材から作る寿司を用いたコースをぜひお楽しみください。食材・味・価格、お客様の満足度を徹底的に追及したお店です。特別な日のお食事、ビジネス接待まで気軽に使用することができます。',
-            'image' => 'img/sushi.jpg',
+            'image' => 'image/sushi.jpg',
         ];
 
         $response->assertStatus(200);

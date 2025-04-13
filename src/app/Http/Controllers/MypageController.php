@@ -14,6 +14,7 @@ use App\Models\Reservation;
 
 class MypageController extends Controller
 {
+    // マイページ
     public function mypage(Request $request)
     {
         $currentUrl = url()->current();
@@ -30,6 +31,7 @@ class MypageController extends Controller
         return view('mypage', compact('favoriteShops', 'reservations'));
     }
 
+    // 予約情報更新機能
     public function update(ReservationRequest $request)
     {
         Reservation::Find($request->id)->update([
@@ -41,6 +43,7 @@ class MypageController extends Controller
         return back();
     }
 
+    // qrコード作成機能
     public function qr($id)
     {
         $reservation = Reservation::findOrFail($id);

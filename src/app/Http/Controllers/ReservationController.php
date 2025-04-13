@@ -11,6 +11,7 @@ use App\Models\Shop;
 
 class ReservationController extends Controller
 {
+    // 予約と決済
     public function create(ReservationRequest $request, $shop_id)
     {
         $reservation = [
@@ -53,6 +54,7 @@ class ReservationController extends Controller
         return view('checkout', ['session' => $session, 'publicKey' => env('STRIPE_PUBLIC_KEY')]);
     }
 
+    // 予約削除機能
     public function destroy(Request $request)
     {
         Reservation::Find($request->id)->delete();

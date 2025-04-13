@@ -10,6 +10,7 @@ use App\Models\Genre;
 
 class ShopController extends Controller
 {
+    // 店舗一覧画面
     public function index(Request $request)
     {
         $currentUrl = url()->current();
@@ -23,6 +24,7 @@ class ShopController extends Controller
         return view('index', compact('shops', 'areas', 'genres'));
     }
 
+    // 検索
     private function getSearchQuery($request, $query)
     {
         if (!empty($request->keyword)) {
@@ -36,10 +38,5 @@ class ShopController extends Controller
         }
 
         return $query;
-    }
-
-    public function thanks()
-    {
-        return view('auth.thanks');
     }
 }

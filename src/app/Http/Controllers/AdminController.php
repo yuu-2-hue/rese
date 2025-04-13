@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,6 +12,7 @@ use App\Models\User;
 
 class AdminController extends Controller
 {
+    // 管理者画面
     public function admin()
     {
         $representatives = User::where('authority', '代表者')->get();
@@ -20,11 +20,13 @@ class AdminController extends Controller
         return view('admin.index', compact('representatives'));
     }
 
+    // 代表者作成画面
     public function store()
     {
         return view('admin.store');
     }
 
+    // 代表者作成機能
     public function create(RegisterRequest $request)
     {
         User::create([

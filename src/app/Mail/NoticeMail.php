@@ -3,7 +3,6 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
@@ -13,7 +12,6 @@ class NoticeMail extends Mailable
 
     public $subject;
     public $sender;
-    public $recipient;
     public $mainText;
 
     /**
@@ -21,11 +19,10 @@ class NoticeMail extends Mailable
      *
      * @return void
      */
-    public function __construct($subject, $sender, $recipient, $mainText)
+    public function __construct($subject, $sender, $mainText)
     {
         $this->subject = $subject;
         $this->sender = $sender;
-        $this->recipient = $recipient;
         $this->mainText = $mainText;
     }
 
@@ -38,7 +35,6 @@ class NoticeMail extends Mailable
     {
         return $this->subject($this->subject)
             ->view('email.notice')
-            ->to($this->recipient)
             ->from($this->sender)
             ->with('mainText', $this->mainText);
     }

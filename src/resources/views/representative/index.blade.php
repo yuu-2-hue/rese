@@ -68,7 +68,7 @@
                 <button type="submit">登録</button>
             </div>
         </form>
-        <form id="mail{{$shop->id}}" class="mail__form" action="/representative/send" method="get">
+        <form id="mail{{$shop->id}}" class="mail__form" action="/representative/send" method="post">
             @csrf
             <input type="hidden" name="id" value="{{ $shop->id }}">
             <input class="subject" type="text" name="subject" placeholder="件名">

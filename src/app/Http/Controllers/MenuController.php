@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-    // メニュー画面表示
+    // メニュー画面
     public function menu(Request $request)
     {
         $previousUrl = url()->previous();

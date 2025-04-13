@@ -13,6 +13,7 @@ use App\Models\Reservation;
 
 class DetailController extends Controller
 {
+    // 店舗詳細画面
     public function detail(Request $request, $shop_id)
     {
         $shop = Shop::Find($shop_id);
@@ -25,6 +26,7 @@ class DetailController extends Controller
         return view('detail', compact('shop', 'reservations', 'reviews'));
     }
 
+    // 評価機能
     public function review(ReviewRequest $request)
     {
         $evaluationMaxCount = 5;
