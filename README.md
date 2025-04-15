@@ -129,5 +129,5 @@ php artisan storage:link
 ### URL
 * 開発環境：http://localhost
 * phpMyAdmin：http://localhost:8080/
-* パブリックIP:18.183.221.37
+* パブリックIP:52.198.32.233
 
