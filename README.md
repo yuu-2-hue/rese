@@ -72,43 +72,21 @@ STRIPE_SECRET_KEY="YOUR_SECRET_KEY"
 composer require stripe/stripe-php
 ```
 
-12. AWSにログイン  
-下記URLよりStripeへログイン  
-<https://aws.amazon.com/jp>
-
-13. 下記サイトを参考にバケットを作成  
-<https://taishou.ne.jp/laravel-s3-connect/>
-
-14. S3のパッケージインストール
-``` bash
-composer require league/flysystem-aws-s3-v3
-```
-
-15. .envに以下環境変数を追加  
-※テストを実施する場合はテスト用の.envにも下記を追加してください
-```
-AWS_ACCESS_KEY_ID="YOUR_PUBLIC_KEY"
-AWS_SECRET_ACCESS_KEY="YOUR_SEACRET_KEY"
-AWS_DEFAULT_REGION="YOUR_REGION"
-AWS_BUCKET="YOUR_BAKET_NAME"
-AWS_URL=https://YOUR_BAKET_NAME.s3.amazonaws.com
-```
-
-16. アプリケーションキーの作成
+12. アプリケーションキーの作成
 ``` bash
 php artisan key:generate
 ```
 
-17. マイグレーションの実行
+13. マイグレーションの実行
 ``` bash
 php artisan migrate
 ```
 
-18. シーディングの実行
+14. シーディングの実行
 ``` bash
 php artisan db:seed
 ```
-19. シンボリックリンク作成
+15. シンボリックリンク作成
 ``` bash
 php artisan storage:link
 ```
@@ -119,9 +97,6 @@ php artisan storage:link
 * MySQL 8.0.26
 * Mailtrap
 * Stripe
-* AWS S3
-* AWS EC2
-* AWS RDS
 
 ### ER図
 ![alt](rese_er.png)
@@ -129,5 +104,4 @@ php artisan storage:link
 ### URL
 * 開発環境：http://localhost
 * phpMyAdmin：http://localhost:8080/
-* パブリックIP:http://52.198.32.233
 

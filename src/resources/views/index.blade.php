@@ -29,7 +29,7 @@
 <div class="content__container">
     @foreach($shops as $shop)
     <div class="card">
-        <img src="{{ $shop->getFileUrl($shop->image) }}" alt="">
+        <img src="{{ asset('storage/'.$shop->image) }}" alt="">
         <p class="name">{{ $shop->name }}</p>
         <span class="area">#{{ $shop->area->area }}</span>
         <span class="genre">#{{ $shop->genre->genre }}</span>

@@ -14,7 +14,7 @@
                 </form>
                 <h2 class="shop__name">{{ $shop->name }}</h2>
             </div>
-            <img class="shop__img" src="{{ $shop->getFileUrl($shop->image) }}" alt="">
+            <img class="shop__img" src="{{ asset('storage/'.$shop->image) }}" alt="">
             <div class="tag__wrapper">
                 <span class="shop__tag">#{{ $shop->area->area }}</span>
                 <span class="shop__tag">#{{ $shop->genre->genre }}</span>

@@ -84,7 +84,7 @@
         <div class="shop-card__wrapper">
             @foreach($favoriteShops as $shop)
             <div class="shop-card">
-                <img src="{{ $shop->getFileUrl($shop->image) }}" alt="">
+                <img src="{{ asset('storage/'.$shop->image) }}" alt="">
                 <p class="name">仙人</p>
                 <span class="area">#{{ $shop->area->area }}</span>
                 <span class="genre">#{{ $shop->genre->genre }}</span>

@@ -44,26 +44,5 @@ class Shop extends Model
         return Favorite::where(['shop_id' => $this->id, 'user_id' => Auth::id()])->exists();
     }
 
-    public function getFileUrl($filePath)
-    {
-        if (!$filePath) return null;
-
-        $s3Client = new S3Client([
-            'region' => env('AWS_DEFAULT_REGION'),
-            'version' => 'latest',
-            'credentials' => [
-                'key' => env('AWS_ACCESS_KEY_ID'),
-                'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            ],
-        ]);
-
-        $command = $s3Client->getCommand('GetObject', [
-            'Bucket' => env('AWS_BUCKET'),
-            'Key' => $filePath,
-        ]);
-
-        $request = $s3Client->createPresignedRequest($command, '+15 minutes');
-
-        return (string) $request->getUri();
-    }
+    
 }

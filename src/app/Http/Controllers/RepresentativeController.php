@@ -43,15 +43,14 @@ class RepresentativeController extends Controller
     public function create(RepresentativeRequest $request)
     {
         $file_name = $request->file('image')->getClientOriginalName();
-        $imagePath = $request->file('image')->storeAs('/image', $file_name,'s3');
-        Storage::disk('s3')->setVisibility($imagePath, 'private');
+        $request->file('image')->storeAs('public/image', $file_name);
 
         Shop::create([
             'area_id' => $request->area,
             'genre_id' => $request->genre,
             'name' => $request->name,
             'overview' => $request->overview,
-            'image' => $imagePath,
+            'image' => 'image/' . $file_name,
             'email' => Auth::User()->email,
         ]);
 
@@ -62,15 +61,14 @@ class RepresentativeController extends Controller
     public function update(RepresentativeRequest $request)
     {
         $file_name = $request->file('image')->getClientOriginalName();
-        $imagePath = $request->file('image')->storeAs('/image', $file_name, 's3');
-        Storage::disk('s3')->setVisibility($imagePath, 'private');
+        $request->file('image')->storeAs('public/image', $file_name);
 
         Shop::Find($request->id)->update([
             'area_id' => $request->area,
             'genre_id' => $request->genre,
             'name' => $request->name,
             'overview' => $request->overview,
-            'image' => $imagePath,
+            'image' => 'image/' . $file_name,
             'email' => Auth::User()->email,
         ]);
 
